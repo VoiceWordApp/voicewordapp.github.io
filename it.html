@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoiceWord for IT teams</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #fbf9f8;
+    --paper: #ffffff;
+    --ink: #1f1b1a;
+    --muted: #5f5654;
+    --line: #e6dfdc;
+    --accent: #c9493a;
+    --accent-soft: #fbe9e5;
+    --code-bg: #f3eeec;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #181514; --paper: #211d1c; --ink: #f1ebe9; --muted: #b9aeab; --line: #3a3230;
+      --accent: #ff8a78; --accent-soft: #3a2521; --code-bg: #2b2524; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #181514; --paper: #211d1c; --ink: #f1ebe9; --muted: #b9aeab; --line: #3a3230;
+    --accent: #ff8a78; --accent-soft: #3a2521; --code-bg: #2b2524; color-scheme: dark;
+  }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 17px/1.6 "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    padding-inline: 16px;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding-block: 2.5rem 4rem; }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 1.25rem; margin-bottom: 1.5rem; }
+  .kicker { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0 0 .4rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .5rem; text-wrap: balance; }
+  .lede { color: var(--muted); margin: 0; max-width: 60ch; }
+  h2 { font-size: 1.2rem; margin: 2.2rem 0 .6rem; text-wrap: balance; }
+  p, li { max-width: 65ch; }
+  ul { padding-left: 1.2rem; display: grid; gap: .35rem; }
+  code { font-family: "JetBrains Mono", Consolas, monospace; font-size: .86em; background: var(--code-bg); padding: .1em .35em; border-radius: 4px; overflow-wrap: anywhere; }
+  .facts { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .table-wrap { overflow-x: auto; }
+  .facts th, .facts td { text-align: left; vertical-align: top; padding: .65rem .85rem; border-bottom: 1px solid var(--line); }
+  .facts tr:last-child th, .facts tr:last-child td { border-bottom: 0; }
+  .facts th { width: 11rem; font-weight: 700; color: var(--muted); font-size: .92rem; }
+  .note { background: var(--accent-soft); border-radius: 8px; padding: .9rem 1.1rem; margin-top: 1rem; }
+  .note p { margin: 0; }
+  footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (max-width: 520px) { .facts th { width: auto; display: block; border-bottom: 0; padding-bottom: 0; } .facts td { display: block; } h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+
+<main>
+  <header>
+    <p class="kicker">Information for IT and security teams</p>
+    <h1>VoiceWord for IT teams</h1>
+    <p class="lede">A member of your team would like to use VoiceWord at work. This page explains what it is, what it does on a PC, and what it connects to, so you can decide whether to allow it.</p>
+  </header>
+
+  <h2>What VoiceWord is</h2>
+  <p>VoiceWord is a free Windows accessibility and productivity app. It lets people <strong>talk to type</strong> (speech to text in any app), <strong>listen to text</strong> (text to speech for highlighted text or a page), and <strong>check their writing</strong> (spelling and grammar). It runs from the notification area near the clock. It is made in New Zealand by VoiceWord (Carly).</p>
+
+  <h2>At a glance</h2>
+  <div class="table-wrap">
+  <table class="facts">
+    <tr><th>Install type</th><td>Per-user install. <strong>No admin rights needed.</strong> Installs to <code>%LOCALAPPDATA%\Programs\VoiceWord</code>.</td></tr>
+    <tr><th>Where it keeps data</th><td>Settings, speech and voice files, word lists and logs live in <code>%LOCALAPPDATA%\VoiceWord\data</code>, for that user only.</td></tr>
+    <tr><th>Program</th><td><code>VoiceWord.exe</code> (desktop app, Windows 10 1809 or later, x64). Publisher: VoiceWord (Carly).</td></tr>
+    <tr><th>Two ways to get it</th><td>1. <strong>Microsoft Store</strong> (by invitation for now). Store builds are reviewed and signed by Microsoft and update through the Store.<br>2. <strong>Installer from GitHub</strong> (coming later, <code>VoiceWord-Setup-….exe</code>). Not code-signed, so Windows SmartScreen shows a warning. Each release lists the installer's SHA-256 so you can check the file.</td></tr>
+    <tr><th>Cost, account, ads</th><td>Free. No account or sign-in. No ads. No analytics or tracking.</td></tr>
+    <tr><th>Uninstall</th><td>Settings &gt; Apps &gt; VoiceWord &gt; Uninstall. The uninstaller can also remove the user's data folder.</td></tr>
+  </table>
+  </div>
+
+  <h2>What it does on the PC, and why</h2>
+  <ul>
+    <li><strong>Low-level keyboard and mouse hooks</strong> (<code>WH_KEYBOARD_LL</code>, <code>WH_MOUSE_LL</code>). Used only to notice VoiceWord's own shortcut keys and when the user highlights text, so it can show its Read / Check buttons. Keystrokes are not recorded, stored or sent.</li>
+    <li><strong>UI Automation</strong> (the Windows accessibility interface). Used to read the highlighted text or the current page aloud, and to tell whether the cursor is in a text box.</li>
+    <li><strong>Clipboard and simulated keystrokes.</strong> Dictated text is put into the user's app by pasting. The user's clipboard is saved first and put back afterwards.</li>
+    <li><strong>Microphone.</strong> Only while the user is dictating. Speech recognition runs on the PC (Whisper, via faster-whisper). Audio is not saved to disk and not sent anywhere.</li>
+    <li><strong>Camera.</strong> Only if the user chooses "Read a printed page". The picture is read with the built-in Windows OCR and is not kept.</li>
+    <li><strong>Optional AI helper.</strong> If the user turns it on, VoiceWord downloads Ollama (a separate, signed program) and runs it for that user, listening on <code>127.0.0.1</code> only, at below-normal priority. It is used to rewrite or explain text on the PC. It can be removed again from VoiceWord's "Add or remove features" window.</li>
+  </ul>
+
+  <h2>What it connects to</h2>
+  <ul>
+    <li><strong>Downloads during setup</strong>, and when the user adds features: speech, voice and language files from <code>huggingface.co</code> and <code>github.com</code> (GitHub's download servers), and, if chosen, Ollama from <code>github.com</code> and its AI model from <code>registry.ollama.ai</code>. Every download is checked against a SHA-256 before use.</li>
+    <li><strong>Update check</strong> (GitHub version only): <code>api.github.com</code>, at most once a day. The user is asked before anything is installed. Store builds are updated by the Store instead.</li>
+    <li><strong>Problem reports:</strong> only when the user clicks Send. Technical details only (version, Windows version, memory, error details, VoiceWord's own log with personal details removed), sent to Google Forms (<code>docs.google.com</code>). Never anything the user said, typed or read.</li>
+    <li><strong>Links the user clicks</strong> (feedback form, support page, help) open in the web browser.</li>
+  </ul>
+  <div class="note"><p>Nothing the user says, types or reads leaves the PC. There is no telemetry.</p></div>
+
+  <h2>If you want to allow it</h2>
+  <ul>
+    <li>The Microsoft Store version is the simplest to approve: it is reviewed and signed by Microsoft.</li>
+    <li>For the GitHub version, allow <code>%LOCALAPPDATA%\Programs\VoiceWord\VoiceWord.exe</code> (or the installer by its SHA-256 from the release page).</li>
+    <li>If your security software flags keyboard hooks, the reason is above: VoiceWord's shortcut keys and highlight detection.</li>
+    <li>For use without internet after setup: once the speech and voice files are downloaded, dictation, reading aloud and writing checks all work offline.</li>
+  </ul>
+
+  <footer>
+    <p>Privacy policy: <a href="https://voicewordapp.github.io/privacy.html">voicewordapp.github.io/privacy.html</a><br>
+    Questions: <strong>voicewordapp@gmail.com</strong></p>
+  </footer>
+</main>
+
+</body>
+</html>
