@@ -24,6 +24,7 @@
     --coral-strong: #c24533;
     --coral-soft: #fde9e5;
     --on-coral: #ffffff;
+    --gh-bg: #1f2328; --gh-ink: #ffffff; --gh-hover: #000000;
     --shadow: 0 1px 2px rgba(28,34,48,.06), 0 8px 24px rgba(28,34,48,.08);
     color-scheme: light;
   }
@@ -31,6 +32,7 @@
     :root:not([data-theme="light"]) {
       --bg: #12151c; --surface: #1b1f29; --ink: #eef1f6; --muted: #a6aebd; --line: #2c3240;
       --coral: #ff8472; --coral-strong: #ff9a8a; --coral-soft: #3a2320; --on-coral: #1c1111;
+      --gh-bg: #f6f8fa; --gh-ink: #1f2328; --gh-hover: #ffffff;
       --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
       color-scheme: dark;
     }
@@ -38,6 +40,7 @@
   :root[data-theme="dark"] {
     --bg: #12151c; --surface: #1b1f29; --ink: #eef1f6; --muted: #a6aebd; --line: #2c3240;
     --coral: #ff8472; --coral-strong: #ff9a8a; --coral-soft: #3a2320; --on-coral: #1c1111;
+      --gh-bg: #f6f8fa; --gh-ink: #1f2328; --gh-hover: #ffffff;
     --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
     color-scheme: dark;
   }
@@ -108,6 +111,14 @@
   .card h3 { font-size: 1.2rem; margin-bottom: .6rem; }
   .card ul { margin: .4rem 0 0; padding-left: 1.1rem; display: grid; gap: .3rem; color: var(--muted); }
   .card .actions { margin-top: 1.2rem; }
+  .way { margin-top: 1.4rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
+  .way h4 { font-family: "Lexend", "Segoe UI", system-ui, sans-serif; font-weight: 500; font-size: 1.05rem; margin: 0 0 .7rem; }
+  .way .small { margin-top: .7rem; }
+  .store-badge { display: inline-block; border-radius: 6px; }
+  .store-badge img { width: 190px; height: auto; }
+  .btn.github { background: var(--gh-bg); color: var(--gh-ink); min-height: 52px; }
+  .btn.github:hover { background: var(--gh-hover); }
+  .btn.github svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
 
   footer { border-top: 1px solid var(--line); padding-block: 2rem 3rem; margin-top: 1rem; color: var(--muted); font-size: .95rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
   footer nav { display: flex; gap: 1.2rem; flex-wrap: wrap; }
@@ -140,7 +151,7 @@
         <h1 id="hero-title">Talk to type.<br><span>Listen</span> to read.</h1>
         <p class="lede">Why only read and type when your PC can listen and talk too? VoiceWord is a free Windows app that types what you say, reads text out loud, and checks your writing, in any app.</p>
         <div class="actions">
-          <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdtgnXrdn6Vq4hoJm1GjGogwwvEpG-2z4ZQQbZTqDWGbuGZmA/viewform">Ask for an invitation</a>
+          <a class="btn primary" href="#get">Get VoiceWord</a>
         </div>
         <p class="small">Being tested with a small group for now. Free. Windows 10 and 11. No account, no ads.</p>
       </div>
@@ -214,10 +225,22 @@
       <h2 id="get-title">Get VoiceWord</h2>
       <div class="get">
         <div class="card">
-          <h3>By invitation, for now</h3>
-          <p>VoiceWord is being tested with a small group. Leave your name and email, and Carly will send you an invitation to get it from the Microsoft Store.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdtgnXrdn6Vq4hoJm1GjGogwwvEpG-2z4ZQQbZTqDWGbuGZmA/viewform">Ask for an invitation</a>
+          <h3>Two ways to get it</h3>
+          <p>VoiceWord is being tested with a small group for now. Pick whichever you like.</p>
+          <div class="way">
+            <h4>Microsoft Store</h4>
+            <a class="store-badge" href="https://apps.microsoft.com/detail/restricted/9NC94Z5SJ9FV">
+              <picture>
+                <source srcset="img/ms-store-light.svg" media="(prefers-color-scheme: dark)">
+                <img src="img/ms-store-dark.svg" alt="Get it from Microsoft" width="161" height="44">
+              </picture>
+            </a>
+            <p class="small">For invited people, for now. <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtgnXrdn6Vq4hoJm1GjGogwwvEpG-2z4ZQQbZTqDWGbuGZmA/viewform">Ask for an invitation</a> with the email of the Microsoft account you use in the Store. Updates come through the Store.</p>
+          </div>
+          <div class="way">
+            <h4>GitHub</h4>
+            <a class="btn github" href="https://github.com/VoiceWordApp/VoiceWord-releases/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.830 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>Download from GitHub</a>
+            <p class="small">Download the file that ends in <strong>.exe</strong> and run it. Windows may say &ldquo;Windows protected your PC&rdquo; the first time: click <strong>More info</strong>, then <strong>Run anyway</strong>. VoiceWord tells you when a new version is ready.</p>
           </div>
         </div>
         <div class="card">
