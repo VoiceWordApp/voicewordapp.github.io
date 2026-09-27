@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoiceWord help</title>
+<meta name="description" content="Short answers for when VoiceWord isn't doing what you expect: no sound, words that didn't appear, the microphone, Read page, installing and invitation codes.">
+<link rel="icon" type="image/png" href="img/icon.png">
+<style>
+  :root { --bg: #ffffff; --text: #1a1a1a; --muted: #555555; --accent: #d9534f; --line: #e5e5e5; --soft: #f6f6f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151515; --text: #eeeeee; --muted: #b0b0b0; --accent: #ff8a73; --line: #333333; --soft: #1f1f1f; }
+  }
+  body { background: var(--bg); color: var(--text); margin: 0;
+         font: 18px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin: 2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+  p, li { margin: .4rem 0; }
+  ol, ul { padding-left: 1.4rem; }
+  .muted { color: var(--muted); }
+  .big { font-size: 1.15rem; }
+  a { color: var(--accent); }
+  nav.jump { background: var(--soft); border-radius: 10px; padding: .8rem 1.1rem; margin: 1.2rem 0; }
+  nav.jump ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .2rem; }
+  .tip { background: var(--soft); border-left: 4px solid var(--accent); padding: .6rem .9rem; border-radius: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>VoiceWord help</h1>
+  <p class="big">Short answers for when VoiceWord isn't doing what you expect. Pick your problem below.</p>
+  <p class="muted">Tip: highlight any part of this page and press VoiceWord's Read button to hear it.</p>
+
+  <nav class="jump" aria-label="Problems on this page">
+    <ul>
+      <li><a href="#no-sound">🔇 I can't hear VoiceWord</a></li>
+      <li><a href="#no-words">✏️ My words didn't appear</a></li>
+      <li><a href="#mic">🎤 The microphone isn't working</a></li>
+      <li><a href="#late-sound">🔔 The "microphone on" sound comes late</a></li>
+      <li><a href="#read-page">📄 Read page read the wrong part</a></li>
+      <li><a href="#install">🛡 "Windows protected your PC"</a></li>
+      <li><a href="#code">🔑 The invitation code</a></li>
+      <li><a href="#still-stuck">💬 Still stuck?</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="no-sound">🔇 I can't hear VoiceWord</h2>
+  <ol>
+    <li><strong>Check sound works in another app</strong>, like a video. If that's quiet too, the problem
+      is your PC or headset, not VoiceWord.</li>
+    <li><strong>Using a Bluetooth headset?</strong> While any app uses its microphone (a call, dictating,
+      or talking to another app), the headset switches to call mode, and normal sound can go quiet. Wait a
+      few seconds after the call or dictation ends.</li>
+    <li><strong>Still quiet?</strong> Turn the headset off and on again. If it has a small USB dongle,
+      unplug it, wait five seconds and plug it back in.</li>
+    <li><strong>Check the volume</strong> isn't turned down or muted, and that Windows is sending sound
+      to the right place: <em>Start, Settings, System, Sound</em>, then look under <em>Output</em>.</li>
+  </ol>
+
+  <h2 id="no-words">✏️ My words didn't appear</h2>
+  <ul>
+    <li><strong>Click where you want the words first</strong>, then hold your key and talk.</li>
+    <li>If you clicked somewhere else while VoiceWord was writing, a <strong>📋 Paste here</strong>
+      button appears on the VoiceWord bar. Click where you want the words, then press it.</li>
+    <li>You can also paste your last dictation any time: click the VoiceWord icon near the clock, then
+      <em>Paste last dictation</em>.</li>
+    <li>A few windows (for example ones that ask for an administrator) don't let other apps type into
+      them.</li>
+  </ul>
+
+  <h2 id="mic">🎤 The microphone isn't working</h2>
+  <ol>
+    <li>Open VoiceWord's <em>Settings</em>, then <em>Microphone</em>. Pick your microphone, then speak
+      and watch the bar move. If the bar moves, VoiceWord can hear you.</li>
+    <li>Check Windows lets apps use it: <em>Start, Settings, Privacy &amp; security, Microphone</em>.
+      Turn on <em>Microphone access</em> and <em>Let desktop apps access your microphone</em>.</li>
+    <li>If you're in a call, the call may be using the microphone. Try again when it's finished.</li>
+  </ol>
+
+  <h2 id="late-sound">🔔 The "microphone on" sound comes late</h2>
+  <p>With a Bluetooth headset this is normal. The headset takes about a second to switch into call
+  mode, and VoiceWord plays the sound once the microphone is really listening.</p>
+  <p class="tip"><strong>Start talking after the sound</strong>, and nothing you say is missed.</p>
+
+  <h2 id="read-page">📄 Read page read the wrong part</h2>
+  <ul>
+    <li>Highlight a few words where you want it to start, then press <strong>Read page</strong>.</li>
+    <li>If VoiceWord can't find what you highlighted, it says so and reads from the top.</li>
+    <li><strong>In Excel</strong>, select the cells you want to hear, then press Read page. To hear a
+      whole row, click its row number first.</li>
+  </ul>
+
+  <h2 id="install">🛡 "Windows protected your PC"</h2>
+  <p>You may see this the first time you install VoiceWord from our download page, because VoiceWord is
+  new. Click <strong>More info</strong>, then <strong>Run anyway</strong>. The Microsoft Store version
+  doesn't show this.</p>
+  <p>Using VoiceWord at work? Your IT team may need to allow it first. There's a
+  <a href="it.html">page for IT teams</a> you can send them.</p>
+
+  <h2 id="code">🔑 The invitation code</h2>
+  <ul>
+    <li>The version from our download page asks for an invitation code <strong>once</strong>, the first
+      time it opens. Paste the code Carly sent you, then press <strong>Start VoiceWord</strong>.</li>
+    <li>Capital letters, spaces and dashes don't matter.</li>
+    <li>Lost your code, or it says it doesn't work any more? Email
+      <strong>voicewordapp@gmail.com</strong> and ask for a new one.</li>
+    <li>The Microsoft Store version never asks for a code.</li>
+  </ul>
+
+  <h2 id="still-stuck">💬 Still stuck?</h2>
+  <ul>
+    <li>Click the VoiceWord icon near the clock, then <em>Help</em>, then
+      <strong>Send feedback or an idea</strong>. Tell us what happened.</li>
+    <li>Or email <strong>voicewordapp@gmail.com</strong>.</li>
+  </ul>
+
+  <p class="muted" style="margin-top:2.5rem"><a href="index.html">VoiceWord home</a> ·
+    <a href="privacy.html">Privacy</a> · <a href="it.html">For IT teams</a></p>
+</main>
+</body>
+</html>
