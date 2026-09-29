@@ -101,6 +101,7 @@
   <ul>
     <li><strong>Downloads during setup</strong>, and when the user adds features: speech, voice and language files from <code>huggingface.co</code> and <code>github.com</code> (GitHub's download servers), and, if chosen, Ollama from <code>github.com</code> and its AI model from <code>registry.ollama.ai</code>. Every download is checked against a SHA-256 before use.</li>
     <li><strong>Update check</strong> (GitHub version only): <code>api.github.com</code>, at most once a day. The user is asked before anything is installed. Store builds are updated by the Store instead.</li>
+    <li><strong>Anonymous daily count:</strong> on a day VoiceWord is used, one HTTPS POST to Google Forms (<code>docs.google.com</code>) with only the VoiceWord version and whether it is the Store or GitHub build. No user, device or content data, and no ID. The user can turn it off in Settings, General (“Help count how many people use VoiceWord”).</li>
     <li><strong>Problem reports:</strong> only when the user clicks Send. Technical details only (version, Windows version, memory, error details, VoiceWord's own log with personal details removed), sent to Google Forms (<code>docs.google.com</code>). Never anything the user said, typed or read.</li>
     <li><strong>Links the user clicks</strong> (feedback form, support page, help) open in the web browser.</li>
   </ul>
