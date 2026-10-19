@@ -89,6 +89,17 @@
   .feature .label { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--coral-strong); font-weight: 700; font-family: "Atkinson Hyperlegible", sans-serif; margin-bottom: .4rem; display: block; }
   .feature p { margin-top: .7rem; color: var(--muted); }
 
+  /* videos: nothing loads from YouTube until a video is clicked */
+  .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+  .video figure { margin: 0; }
+  .video .frame { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: #000; }
+  .video button { all: unset; cursor: pointer; display: block; width: 100%; height: 100%; position: relative; }
+  .video button:focus-visible { outline: 3px solid var(--coral); outline-offset: -3px; }
+  .video img, .video iframe { display: block; width: 100%; height: 100%; object-fit: cover; border: 0; }
+  .video .play { position: absolute; right: 14px; bottom: 18px; width: 52px; height: 52px; border-radius: 50%; background: var(--coral); color: var(--on-coral); display: grid; place-items: center; font-size: 1.3rem; box-shadow: var(--shadow); }
+  .video figcaption { margin-top: .6rem; font-weight: 700; }
+  .video figcaption span { display: block; font-weight: 400; color: var(--muted); font-size: .9rem; }
+
   /* more tools */
   .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin-top: 2rem; }
   .tool { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; }
@@ -140,6 +151,7 @@
     <a class="brand" href="#top" id="top"><img src="img/icon.png" alt="" width="36" height="36">VoiceWord</a>
     <nav aria-label="Page sections">
       <a href="#what">What it does</a>
+      <a href="#videos">Videos</a>
       <a href="#private">Privacy</a>
       <a href="#get">Get VoiceWord</a>
       <a href="help.html">Help</a>
@@ -190,6 +202,26 @@
         </div>
         <div class="shot"><img src="screenshots/04_check_your_writing.png" alt="VoiceWord's check panel explaining a spelling mistake and a mixed-up word" width="1920" height="1080" loading="lazy"></div>
       </div>
+    </section>
+
+    <section class="section" id="videos" aria-labelledby="videos-title">
+      <h2 id="videos-title">See it in 30 seconds</h2>
+      <p class="intro">Three short videos, with sound. Click one to play it.</p>
+      <div class="videos">
+        <div class="video"><figure>
+          <div class="frame"><button type="button" data-video="LlvneeNoApU" aria-label="Play the video: Write an email by talking"><img src="img/videos/talk.png" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true">&#9654;</span></button></div>
+          <figcaption>Write an email by talking<span>Talk &middot; free &middot; <a href="https://www.youtube.com/watch?v=LlvneeNoApU">Watch on YouTube</a></span></figcaption>
+        </figure></div>
+        <div class="video"><figure>
+          <div class="frame"><button type="button" data-video="x6kXBVyuEXU" aria-label="Play the video: Have any text read aloud"><img src="img/videos/listen.png" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true">&#9654;</span></button></div>
+          <figcaption>Have any text read aloud<span>Listen &middot; free &middot; <a href="https://www.youtube.com/watch?v=x6kXBVyuEXU">Watch on YouTube</a></span></figcaption>
+        </figure></div>
+        <div class="video"><figure>
+          <div class="frame"><button type="button" data-video="4uOP9bt5fNY" aria-label="Play the video: Fix and understand writing"><img src="img/videos/check.png" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true">&#9654;</span></button></div>
+          <figcaption>Fix and understand writing<span>Check &middot; Plus &middot; <a href="https://www.youtube.com/watch?v=4uOP9bt5fNY">Watch on YouTube</a></span></figcaption>
+        </figure></div>
+      </div>
+      <p class="small">The videos play from YouTube. Nothing is loaded from YouTube until you click one.</p>
     </section>
 
     <section class="section" aria-labelledby="tools-title">
@@ -282,3 +314,16 @@
     </nav>
   </footer>
 </div>
+<script>
+  // Swap a video's picture for the YouTube player only when it is clicked (privacy-enhanced mode).
+  document.querySelectorAll('.video button[data-video]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.video + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label').replace('Play the video: ', '');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.replaceWith(f);
+    });
+  });
+</script>
