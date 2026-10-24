@@ -68,9 +68,15 @@
       if (ZONE_FIELD) body.set(ZONE_FIELD, zoneName());
       if (FROM_FIELD) body.set(FROM_FIELD, fromSite());
       var text = body.toString();
-      if (navigator.sendBeacon && navigator.sendBeacon(VISITS_POST_URL, new Blob([text], {type: 'application/x-www-form-urlencoded'}))) return;
-      fetch(VISITS_POST_URL, {method: 'POST', mode: 'no-cors', keepalive: true,
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: text});
+      // fetch with keepalive (it still goes if the page moves on, e.g. after a Download click). Not
+      // sendBeacon: Google Forms drops beacons (checked 2026-10-24). credentials 'omit': no Google
+      // cookies go with it.
+      if (window.fetch) {
+        fetch(VISITS_POST_URL, {method: 'POST', mode: 'no-cors', keepalive: true, credentials: 'omit',
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'}, body: text}).catch(function () {});
+        return;
+      }
+      if (navigator.sendBeacon) navigator.sendBeacon(VISITS_POST_URL, new Blob([text], {type: 'application/x-www-form-urlencoded'}));
     } catch (e) { /* counting must never get in the way of the page */ }
   }
 
