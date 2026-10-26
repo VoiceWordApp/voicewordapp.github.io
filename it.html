@@ -73,6 +73,8 @@
     </div>
   </header>
 
+  <p>📄 <a href="VoiceWord-for-schools-and-workplaces.pdf">One-page summary for schools and workplaces (PDF)</a>: what it does, privacy, accessibility, installing and licences.</p>
+
   <h2>What VoiceWord is</h2>
   <p>VoiceWord is a Windows accessibility and productivity app. It lets people <strong>talk to type</strong> (speech to text in any app), <strong>listen to text</strong> (text to speech for highlighted text or a page), and <strong>check their writing</strong> (spelling and grammar). It runs from the notification area near the clock. It is made in New Zealand by VoiceWord (Carly).</p>
 
@@ -83,6 +85,7 @@
     <tr><th>Where it keeps data</th><td>Settings, speech and voice files, word lists and logs live in <code>%LOCALAPPDATA%\VoiceWord\data</code>, for that user only.</td></tr>
     <tr><th>Program</th><td><code>VoiceWord.exe</code> (desktop app, Windows 10 1809 or later, x64). Publisher: VoiceWord (Carly).</td></tr>
     <tr><th>Two ways to get it</th><td>1. <strong>Microsoft Store</strong>. Store builds are reviewed and signed by Microsoft and update through the Store.<br>2. <strong>Installer from GitHub</strong> (<code>VoiceWord-Setup-….exe</code>, from <a href="https://github.com/VoiceWordApp/VoiceWord-releases/releases/latest">github.com/VoiceWordApp/VoiceWord-releases</a>). Not code-signed, so Windows SmartScreen shows a warning. Each release lists the installer's SHA-256 so you can check the file.</td></tr>
+    <tr><th>Installing on many PCs</th><td>Use the <strong>Microsoft Store</strong> version (Store ID <code>9NC94Z5SJ9FV</code>).<br><strong>Intune:</strong> Apps &gt; Windows &gt; Add &gt; <em>Microsoft Store app (new)</em>, then search for VoiceWord or enter the ID.<br><strong>winget:</strong> <code>winget install --id 9NC94Z5SJ9FV --source msstore --accept-package-agreements --accept-source-agreements</code><br>Updates then come through the Store by themselves. PCs need access to the Microsoft Store.<br>Each person enters the organisation's <strong>work licence key</strong> in VoiceWord: Settings &gt; ✨ Plus.</td></tr>
     <tr><th>Cost, account, ads</th><td>Free for personal use only. <strong>Use at work, or on an organisation's PCs, needs a work licence</strong>: NZ$99 per PC (one payment), or NZ$792 for a 10-PC pack (20% off); schools NZ$990 a year per school; quote for more than 50 PCs. Buy on the <a href="buy.html">Buy page</a>, or for a quote and invoice email <a href="mailto:voicewordapp@gmail.com">voicewordapp@gmail.com</a>. See the <a href="terms.html">terms</a>. No account or sign-in. No ads. One anonymous daily count, which can be turned off.</td></tr>
     <tr><th>Uninstall</th><td>Settings &gt; Apps &gt; VoiceWord &gt; Uninstall. The uninstaller can also remove the user's data folder.</td></tr>
   </table>
@@ -102,7 +105,7 @@
   <ul>
     <li><strong>Downloads during setup</strong>, and when the user adds features: speech, voice and language files from <code>huggingface.co</code> and <code>github.com</code> (GitHub's download servers), and, if chosen, Ollama from <code>github.com</code> and its AI model from <code>registry.ollama.ai</code>. Every download is checked against a SHA-256 before use.</li>
     <li><strong>Update check</strong> (GitHub version only): <code>api.github.com</code>, at most once a day. The user is asked before anything is installed. Store builds are updated by the Store instead.</li>
-    <li><strong>Anonymous daily count:</strong> on a day VoiceWord is used, one HTTPS POST to Google Forms (<code>docs.google.com</code>) with only the VoiceWord version, whether it is the Store or GitHub build, and the country Windows is set to (a 2-letter code like NZ). No user, device or content data, and no ID. The user can turn it off in Settings, General (“Help count how many people use VoiceWord”).</li>
+    <li><strong>Anonymous daily count:</strong> on a day VoiceWord is used, one HTTPS POST to Google Forms (<code>docs.google.com</code>) with only the VoiceWord version, whether it is the Store or GitHub build, the country Windows is set to (a 2-letter code like NZ), and which VoiceWord tools were used since the last count (tool names only, such as Dictate or Read; not what was done with them, how often, or when). No user, device or content data, and no ID. The user can turn it off in Settings, General (“Help count how many people use VoiceWord”).</li>
     <li><strong>Problem reports:</strong> only when the user clicks Send. Technical details only (version, Windows version, memory, error details, VoiceWord's own log with personal details removed), sent to Google Forms (<code>docs.google.com</code>). Never anything the user said, typed or read.</li>
     <li><strong>Links the user clicks</strong> (feedback form, support page, help) open in the web browser.</li>
   </ul>
